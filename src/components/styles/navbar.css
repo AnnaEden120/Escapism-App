@@ -1,0 +1,33 @@
+.sum{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+
+.logo{
+    margin-left: 1rem;
+    color:white;
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.ul{
+    display: flex;
+    margin: 25px;
+}
+
+.item{
+    display: flex;
+}
+
+.ul li{
+    margin: 0 1rem;
+}
+
+li a{
+    text-decoration: none;
+    color:white;
+    font-weight: bolder;
+}
