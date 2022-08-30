@@ -1,33 +1,35 @@
 import React from "react";
-import useForm from "react-hook-form";
+import { useForm } from "react-hook-form";
 
-export default function form() {
-  const { register, handleSubmit, errors } = useForm();
+function Sign() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm({
+    defaultValues: {
+      name: "",
+      email: "",
+      password: ""
+    }
+  });
 
-  const onSubmit = (data) => {
-    console.log(data);
-  };
+  const onSubmit = (data) => alert(JSON.stringify(data));
 
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <label for="name">Name</label>
-        <input type="text" placeholder="Name" name="fname" ref={register} />
+        <input {...register("name", { required: true })} placeholder="Name" />
         <br />
-        <label for="email">Email</label>
-        <input type="text" placeholder="Email" name="email" ref={register} />
+        <input {...register("email", { required: true })} placeholder="Email" />
         <br />
-        <label for="password">Password</label>
         <input
-          type="password"
+          {...register("password", { required: true, minLength: 6 })}
           placeholder="Password"
-          name="password"
-          ref={register({ required: true })}
         />
-        <br />
 
         <label for="genres">Choose a genre:</label>
-        <select id="genre" name="genre">
+        <select {...register("genre")}>
           <option value="comedy">Comedy</option>
           <option value="horror">Horror</option>
           <option value="action">Action</option>
@@ -41,8 +43,11 @@ export default function form() {
           <option value="romance">Romance</option>
           <option value="thriller">Thriller</option>
         </select>
+        {errors.password && <p>Password is invalid</p>}
         <input type="submit" />
       </form>
     </div>
   );
 }
+
+export default Sign;
