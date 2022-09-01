@@ -1,24 +1,13 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-function Sign() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors }
-  } = useForm({
-    defaultValues: {
-      name: "",
-      email: "",
-      password: ""
-    }
-  });
-
-  const onSubmit = (data) => alert(JSON.stringify(data));
+function Sign(props) {
+  const { register, handleSubmit, errors } = useForm();
+  console.log(errors);
 
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(props.onSubmit)}>
         <input {...register("name", { required: true })} placeholder="Name" />
         <br />
         <input {...register("email", { required: true })} placeholder="Email" />
@@ -29,7 +18,7 @@ function Sign() {
         />
 
         <label for="genres">Choose a genre:</label>
-        <select {...register("genre")}>
+        <select {...register("genre", { required: true })}>
           <option value="comedy">Comedy</option>
           <option value="horror">Horror</option>
           <option value="action">Action</option>
@@ -43,7 +32,7 @@ function Sign() {
           <option value="romance">Romance</option>
           <option value="thriller">Thriller</option>
         </select>
-        {errors.password && <p>Password is invalid</p>}
+
         <input type="submit" />
       </form>
     </div>

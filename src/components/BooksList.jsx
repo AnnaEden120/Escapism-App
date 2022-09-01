@@ -21,7 +21,7 @@ const BookList = () => {
       {books.map((book) => (
         <div key={book.id}>
           <div>
-            <h2>{book.title}</h2>
+            <h4>{book.title}</h4>
           </div>
           <div>
             <img src={book.image_url} alt="#" />

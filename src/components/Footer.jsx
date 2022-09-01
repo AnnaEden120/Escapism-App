@@ -3,7 +3,7 @@ import "./styles/footer.css";
 
 const Footer = () => {
   return (
-    <div>
+    <div className="foot">
       <footer>
         <p>Escapism App 2022&copy;</p>
       </footer>
