@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import "./styles/form.css";
 
 function Sign(props) {
   const { register, handleSubmit, errors } = useForm();
@@ -16,8 +17,10 @@ function Sign(props) {
           {...register("password", { required: true, minLength: 6 })}
           placeholder="Password"
         />
+        <br />
 
         <label for="genres">Choose a genre:</label>
+        <br />
         <select {...register("genre", { required: true })}>
           <option value="comedy">Comedy</option>
           <option value="horror">Horror</option>
@@ -32,8 +35,9 @@ function Sign(props) {
           <option value="romance">Romance</option>
           <option value="thriller">Thriller</option>
         </select>
+        <br />
 
-        <input type="submit" />
+        <input className="submit" type="submit" />
       </form>
     </div>
   );

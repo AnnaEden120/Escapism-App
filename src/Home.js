@@ -6,7 +6,6 @@ function Home() {
   const [isShown, setIsShown] = useState(false);
 
   const handleClick = (event) => {
-    // 👇️ toggle shown state
     setIsShown((current) => true);
   };
 
