@@ -26,9 +26,6 @@ const BookList = () => {
           <div>
             <img src={book.image_url} alt="#" />
           </div>
-          <div>
-            <button>Buy Now</button>
-          </div>
         </div>
       ))}
     </div>
