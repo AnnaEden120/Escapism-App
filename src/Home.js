@@ -1,6 +1,7 @@
 import React from "react";
 import Form from "./components/Form";
 import { useState } from "react";
+import "./App.css";
 
 function Home() {
   const [isShown, setIsShown] = useState(false);
@@ -10,10 +11,12 @@ function Home() {
   };
 
   return (
-    <div>
+    <div className="home">
       <h1>Home</h1>
-      <button onClick={handleClick}>Sign up</button>
-      {isShown && <Form />}
+      <button className="sign-up" onClick={handleClick}>
+        Sign up
+      </button>
+      <div>{isShown && <Form />}</div>
     </div>
   );
 }

@@ -12,6 +12,11 @@ button {
   width: 100px;
   height: 150px;
   font-size: 20px;
+  font-weight: bold;
   background-color: cornflowerblue;
   border-color: blueviolet;
+}
+
+button:hover {
+  background-color: lightskyblue;
 }
