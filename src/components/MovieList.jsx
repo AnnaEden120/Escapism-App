@@ -1,16 +1,34 @@
 import React from "react";
+import "./styles/lists.css";
 
+const MovieList = () => {
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": "5819e5e223msh21b0556c8e8b527p160eefjsnac6c5e43e946",
+      "X-RapidAPI-Host": "imdb8.p.rapidapi.com"
+    }
+  };
 
-function MovieList(){
-const movies=['1','2','3']
+  fetch("https://imdb8.p.rapidapi.com/title/find?q=movie%20the%20of", options)
+    .then((response) => response.json())
+    .then((data) => {
+      const movies = data.results;
 
- return( 
- <div className="movie">
-   {movies.map(movie=>(
+      movies.map((item) => {
+        const poster = item.image.url;
+        const movie = `<img src="${poster}"></img>`;
+        document.querySelector(".movie-list").innerHTML += movie;
+      });
+    })
 
-   ))}
- </div>
-      )
-}
+    .catch((err) => console.error(err));
+
+  return (
+    <>
+      <div className="movie-list"></div>
+    </>
+  );
+};
 
 export default MovieList;
