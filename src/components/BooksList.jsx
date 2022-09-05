@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../App.css";
 import { API_URL } from "../API";
 import axios from "axios";
+import "./styles/lists.css";
 
 const BookList = () => {
   const [books, setBooks] = useState([]);

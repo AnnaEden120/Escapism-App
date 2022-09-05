@@ -1,0 +1,29 @@
+.book-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.book-list {
+  min-height: 80vh;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+  transition: all 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.1);
+}
+
+.book {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px 0;
+}
