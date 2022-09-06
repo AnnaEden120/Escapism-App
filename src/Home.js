@@ -16,7 +16,7 @@ function Home() {
       <button className="sign-up" onClick={handleClick}>
         Sign up
       </button>
-      <div>{isShown && <Form />}</div>
+      <div className="form-home">{isShown && <Form />}</div>
     </div>
   );
 }

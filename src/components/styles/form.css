@@ -15,15 +15,16 @@ input {
 }
 
 label {
-  font-size: 15px;
+  font-size: 20px;
   margin-left: 30px;
+  text-align: center;
+  margin-right: 40px;
 }
 select {
   height: 30px;
-  margin-left: 30px;
 }
 
 .submit {
-  margin-left: 50px;
-  width: 50px;
+  margin-left: 10px;
+  width: 80px;
 }

@@ -7,7 +7,7 @@ function Sign(props) {
   console.log(errors);
 
   return (
-    <div>
+    <div className="form-div">
       <form onSubmit={handleSubmit(props.onSubmit)}>
         <input {...register("name", { required: true })} placeholder="Name" />
         <br />
@@ -37,7 +37,7 @@ function Sign(props) {
         </select>
         <br />
 
-        <input className="submit" type="submit" />
+        <input className="submit" type="submit" value="Submit" />
       </form>
     </div>
   );

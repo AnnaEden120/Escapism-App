@@ -4,12 +4,6 @@
   margin: 0;
 }
 
-.App {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
 body {
   background-image: url("https://ei.marketwatch.com/Multimedia/2020/05/21/Photos/ZH/MW-IG985_Movies_20200521113911_ZH.jpg?uuid=378c769c-9b79-11ea-bd9d-9c8e992d421e");
   background-repeat: no-repeat;
@@ -23,6 +17,12 @@ body {
   width: 50%;
   padding: 70px 0;
   text-align: center;
+}
+
+.home .form-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .home h1 {
