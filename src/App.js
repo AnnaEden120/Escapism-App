@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import MyList from "./MyList";
 import Home from "./Home";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -11,9 +10,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/mylist" element={<MyList />} />
+        <Route path="/mylist/*" element={<MyList />} />
       </Routes>
-      <Footer />
     </div>
   );
 }

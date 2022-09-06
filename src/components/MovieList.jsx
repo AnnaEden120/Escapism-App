@@ -1,38 +1,48 @@
 import React, { useState, useEffect } from "react";
-import "../App.css";
-import { API_URL_MOVIE, API_URL_MOVIES } from "../API";
-import axios from "axios";
+import "./styles/lists.css";
 
-const BookList = () => {
+const MovieList = (props) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(API_URL_MOVIES)
-      .then((res) => {
-        console.log(res.data);
-        setBooks(res.data);
-      })
-      .catch((err) => console.log(err));
+    getData();
   }, []);
 
+  const getData = () => {
+    const options = {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": "5819e5e223msh21b0556c8e8b527p160eefjsnac6c5e43e946",
+        "X-RapidAPI-Host": "imdb8.p.rapidapi.com"
+      }
+    };
+
+    fetch(`https://imdb8.p.rapidapi.com/title/find?q=${props.search}`, options)
+      .then((response) => response.json())
+      .then((data) => {
+        const movies = data.results;
+        console.log(movies);
+
+        setMovies(movies);
+      })
+
+      .catch((err) => console.error(err));
+  };
+
   return (
-    <div className="book-list">
-      {books.map((book) => (
-        <div key={book.id}>
-          <div>
-            <h4>{book.title}</h4>
-          </div>
-          <div>
-            <img src={book.image_url} alt="#" />
-          </div>
-          <div>
-            <button>Buy Now</button>
-          </div>
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="movie-list">
+        {movies.map((item, i) => {
+          return (
+            <div key={i}>
+              <h4>{item.l}</h4>
+              <img src={item.image.url} alt="#"></img>
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 };
 
-export default BookList;
+export default MovieList;
