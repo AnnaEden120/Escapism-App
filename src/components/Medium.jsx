@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./styles/medium.css";
 import BookList from "./BooksList";
 import MovieList from "./MovieList";
+import ShowsList from "./ShowsList";
 
 function Medium() {
   const [isShown, setIsShown] = useState(false);
@@ -26,9 +27,15 @@ function Medium() {
           <button Click={handleClick}>Games</button>
         </div>
       </div>
-
-      <div>{isShown && <BookList />}</div>
-      <div>{isShown && <MovieList />}</div>
+      <div>
+        <div>
+          <MovieList search="movie the of" />
+        </div>
+        {/* <div>{isShown && <BookList />}</div>
+        <div>{isShown && <MovieList />}</div>
+       <div>{isShown && <ShowsList />}</div>
+  */}
+      </div>
     </>
   );
 }

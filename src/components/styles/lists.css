@@ -4,7 +4,7 @@
 }
 
 .book-list {
-  min-height: 30vh;
+  min-height: 45vh;
   justify-items: center;
   text-align: center;
   border: 1px;
@@ -54,5 +54,24 @@
 }
 
 .movie-list img:hover {
+  transform: scale(1.1);
+}
+
+.show-list {
+  justify-items: center;
+  text-align: center;
+  border: 1px;
+  display: flex;
+  overflow-x: auto;
+}
+
+.show-list img {
+  width: 200px;
+  height: 200px;
+  transition: all 0.3s ease;
+  margin: 10px;
+}
+
+.show-list img:hover {
   transform: scale(1.1);
 }
