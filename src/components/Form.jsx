@@ -37,7 +37,7 @@ function Sign(props) {
         </select>
         <br />
 
-        <input className="submit" type="submit" />
+        <input className="submit" type="submit" value="Submit" />
       </form>
     </div>
   );

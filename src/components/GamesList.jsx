@@ -1,45 +1,34 @@
-import React, { useState } from "react";
-import "../App.css";
-import axios from "axios";
+import React from "react";
+import "./styles/lists.css";
 
-const GamesList = () => {
-  const [games] = useState([]);
-
+const MovieList = () => {
   const options = {
     method: "GET",
-    url: "https://steam2.p.rapidapi.com/search/Counter/page/1",
     headers: {
       "X-RapidAPI-Key": "5819e5e223msh21b0556c8e8b527p160eefjsnac6c5e43e946",
-      "X-RapidAPI-Host": "steam2.p.rapidapi.com"
+      "X-RapidAPI-Host": "imdb8.p.rapidapi.com"
     }
   };
 
-  axios
-    .request(options)
-    .then(function (response) {
-      console.log(response.data);
+  fetch("https://imdb8.p.rapidapi.com/title/find?q=movie%20the%20of", options)
+    .then((response) => response.json())
+    .then((data) => {
+      const movies = data.results;
+
+      movies.map((item) => {
+        const poster = item.image.url;
+        const movie = `<img src="${poster}"></img>`;
+        document.querySelector(".movie-list").innerHTML += movie;
+      });
     })
-    .catch(function (error) {
-      console.error(error);
-    });
+
+    .catch((err) => console.error(err));
 
   return (
-    <div className="game-list">
-      {games.map((object) => (
-        <div key={object.appId}>
-          <div>
-            <h2>{object.title}</h2>
-          </div>
-          <div>
-            <img src={object.imgUrl} alt="#" />
-          </div>
-          <div>
-            <button>Buy Now</button>
-          </div>
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="movie-list"></div>
+    </>
   );
 };
 
-export default GamesList;
+export default MovieList;
