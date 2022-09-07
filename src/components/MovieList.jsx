@@ -12,7 +12,7 @@ const MovieList = () => {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "5819e5e223msh21b0556c8e8b527p160eefjsnac6c5e43e946",
+        "X-RapidAPI-Key": "e4ec0fbd24msh9d07b92d5168003p12b8d8jsn8b323e3d15ad",
         "X-RapidAPI-Host": "imdb8.p.rapidapi.com"
       }
     };
@@ -35,11 +35,18 @@ const MovieList = () => {
   return (
     <>
       <div className="movie-list">
-        {movies.map((item) => {
+        {movies.map((item, index) => {
           return (
-            <div key={i}>
+            <div key={index}>
               <h4>{item.title}</h4>
-              <img src={item.image.url} alt="#"></img>
+              <img
+                src={
+                  item.image
+                    ? item.image.url
+                    : "https://m.media-amazon.com/images/M/MV5BZGVlNjMzZDItYmVkNy00ODVkLWExOTItNGQ4MDY1NDAxNzE0XkEyXkFqcGdeQXVyMTk2MDc1MjQ@._V1_.jpg"
+                }
+                alt="#"
+              ></img>
             </div>
           );
         })}

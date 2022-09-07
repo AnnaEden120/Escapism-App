@@ -8,7 +8,7 @@ import GamesList from "./GamesList";
 const Medium = ({ title }) => {
   const [active, setActive] = useState("FirstRow");
   return (
-    <div className="container">
+    <>
       <div className="buttons">
         <button onClick={() => setActive("SecondRow")}>Movies</button>
         <button onClick={() => setActive("ThirdRow")}>Shows</button>
@@ -16,13 +16,13 @@ const Medium = ({ title }) => {
         <button onClick={() => setActive("FourthRow")}>Games</button>
       </div>
 
-      <div>
+      <div className="medium-rows">
         {active === "FirstRow" && <BookList title="books" />}
         {active === "SecondRow" && <MovieList title="movies" />}
         {active === "ThirdRow" && <ShowsList title="shows" />}
         {active === "FourthRow" && <GamesList title="games" />}
       </div>
-    </div>
+    </>
   );
 };
 

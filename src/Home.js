@@ -13,7 +13,7 @@ function Home() {
   return (
     <div className="home">
       <h1>Home</h1>
-      <button className="sign-up" onClick={handleClick}>
+      <button id="sign-up" onClick={handleClick}>
         Sign up
       </button>
       <div className="form-home">{isShown && <Form />}</div>
