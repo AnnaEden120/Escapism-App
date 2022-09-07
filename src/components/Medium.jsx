@@ -7,6 +7,7 @@ import GamesList from "./GamesList";
 
 const Medium = ({ title }) => {
   const [active, setActive] = useState("FirstRow");
+
   return (
     <>
       <div className="buttons">

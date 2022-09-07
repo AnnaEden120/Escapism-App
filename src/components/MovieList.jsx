@@ -38,7 +38,6 @@ const MovieList = () => {
         {movies.map((item, index) => {
           return (
             <div key={index}>
-              <h4>{item.title}</h4>
               <img
                 src={
                   item.image
@@ -47,6 +46,9 @@ const MovieList = () => {
                 }
                 alt="#"
               ></img>
+              <div className="title">
+                <h4>{item.title}</h4>
+              </div>
             </div>
           );
         })}

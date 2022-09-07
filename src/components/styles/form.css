@@ -1,8 +1,7 @@
 form {
-  color: darkblue;
-  background-color: lightgrey;
+  background-color: lightsteelblue;
   width: 300px;
-  border: 5px solid black;
+  border: 3px solid black;
   padding: 10px;
   margin: 20px;
   justify-items: center;
@@ -12,19 +11,15 @@ form {
 input {
   height: 2rem;
   margin: 10px;
-}
-
-label {
-  font-size: 20px;
-  margin-left: 30px;
   text-align: center;
-  margin-right: 40px;
-}
-select {
-  height: 30px;
 }
 
 .submit {
   margin-left: 10px;
   width: 90px;
+}
+
+#pwd {
+  -webkit-text-security: disc;
+  -moz-text-security: circle;
 }

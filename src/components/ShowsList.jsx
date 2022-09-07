@@ -38,8 +38,10 @@ const ShowsList = () => {
         {shows.map((item, index) => {
           return (
             <div key={index}>
-              <h4>{item.title}</h4>
               <img src={item.image && item.image.url} alt="#"></img>
+              <div className="title">
+                <h4>{item.title}</h4>
+              </div>
             </div>
           );
         })}

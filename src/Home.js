@@ -1,5 +1,5 @@
 import React from "react";
-import Form from "./components/Form";
+import Sign from "./components/Form";
 import { useState } from "react";
 import "./App.css";
 
@@ -16,7 +16,7 @@ function Home() {
       <button id="sign-up" onClick={handleClick}>
         Sign up
       </button>
-      <div className="form-home">{isShown && <Form />}</div>
+      <div className="form-home">{isShown && <Sign />}</div>
     </div>
   );
 }

@@ -38,8 +38,17 @@ const GamesList = () => {
         {games.map((item, index) => {
           return (
             <div key={index}>
-              <h4>{item.title}</h4>
-              <img src={item.image && item.image.url} alt="#"></img>
+              <img
+                src={
+                  item.image
+                    ? item.image.url
+                    : "https://render.fineartamerica.com/images/rendered/search/poster/8/6.5/break/images/artworkimages/medium/1/tekken-5-eloisa-mannion.jpg"
+                }
+                alt="#"
+              ></img>
+              <div className="title">
+                <h4>{item.title}</h4>
+              </div>
             </div>
           );
         })}
