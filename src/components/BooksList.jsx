@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../App.css";
+import "./styles/lists.css";
 import { API_URL } from "../API";
 import axios from "axios";
 
@@ -20,15 +20,7 @@ const BookList = () => {
     <div className="book-list">
       {books.map((book) => (
         <div key={book.id}>
-          <div>
-            <h4>{book.title}</h4>
-          </div>
-          <div>
-            <img src={book.image_url} alt="#" />
-          </div>
-          <div>
-            <button>Buy Now</button>
-          </div>
+          <img src={book.image_url} alt="#" />
         </div>
       ))}
     </div>

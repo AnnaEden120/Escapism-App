@@ -35,8 +35,11 @@ body {
 }
 
 .sign-up {
-  height: 50px;
-  font-size: 20px;
+  height: 60px;
+  font-size: 30px;
+  width: 150px;
+  font-weight: bold;
+  background-color: peachpuff;
 }
 .sign-up:hover {
   background-color: cadetblue;

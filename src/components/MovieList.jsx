@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./styles/lists.css";
 
-const MovieList = (props) => {
+const MovieList = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -17,7 +17,10 @@ const MovieList = (props) => {
       }
     };
 
-    fetch(`https://imdb8.p.rapidapi.com/title/find?q=${props.search}`, options)
+    fetch(
+      `https://imdb8.p.rapidapi.com/title/find?q=movie%20the%20one`,
+      options
+    )
       .then((response) => response.json())
       .then((data) => {
         const movies = data.results;
@@ -32,10 +35,10 @@ const MovieList = (props) => {
   return (
     <>
       <div className="movie-list">
-        {movies.map((item, i) => {
+        {movies.map((item) => {
           return (
             <div key={i}>
-              <h4>{item.l}</h4>
+              <h4>{item.title}</h4>
               <img src={item.image.url} alt="#"></img>
             </div>
           );

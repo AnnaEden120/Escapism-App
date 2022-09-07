@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./styles/lists.css";
 
-const GamesList = (props) => {
+const GamesList = () => {
   const [games, setGames] = useState([]);
 
   useEffect(() => {
@@ -17,7 +17,10 @@ const GamesList = (props) => {
       }
     };
 
-    fetch(`https://imdb8.p.rapidapi.com/title/find?q=${props.search}`, options)
+    fetch(
+      `https://imdb8.p.rapidapi.com/title/find?q=videoGame%20the%20`,
+      options
+    )
       .then((response) => response.json())
       .then((data) => {
         const games = data.results;
@@ -32,10 +35,10 @@ const GamesList = (props) => {
   return (
     <>
       <div className="games-list">
-        {games.map((item, i) => {
+        {games.map((item) => {
           return (
             <div key={i}>
-              <h4>{item.l}</h4>
+              <h4>{item.title}</h4>
               <img src={item.image.url} alt="#"></img>
             </div>
           );
