@@ -14,6 +14,7 @@ function Sign(props) {
         <input {...register("email", { required: true })} placeholder="Email" />
         <br />
         <input
+          type="password"
           {...register("password", { required: true, minLength: 6 })}
           placeholder="Password"
         />

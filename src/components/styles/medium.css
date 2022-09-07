@@ -13,10 +13,10 @@ button {
   height: 150px;
   font-size: 20px;
   font-weight: bold;
-  background-color: cornflowerblue;
-  border-color: blueviolet;
+  background-color: lightgrey;
+  border-color: rgb(63, 55, 70);
 }
 
 button:hover {
-  background-color: lightskyblue;
+  background-color: moccasin;
 }
