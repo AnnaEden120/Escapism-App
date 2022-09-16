@@ -1,0 +1,23 @@
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+button {
+  justify-content: center;
+  display: flex;
+  padding-top: 50px;
+  margin: 30px;
+  width: 100px;
+  height: 150px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: lightgrey;
+  border-color: rgb(63, 55, 70);
+}
+
+button:hover {
+  background-color: moccasin;
+}
